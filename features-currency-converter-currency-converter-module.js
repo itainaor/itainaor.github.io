@@ -17717,7 +17717,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/__ivy_ngcc__/fesm2015/ngrx-store.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
 /* harmony import */ var _core_app_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../core/app.service */ "./src/app/core/app.service.ts");
-/* harmony import */ var _views_curreny_converter_search_currency_converter_search_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/curreny-converter-search/currency-converter-search.component */ "./src/app/features/currency-converter/views/curreny-converter-search/currency-converter-search.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _views_curreny_converter_search_currency_converter_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/curreny-converter-search/currency-converter-search.component */ "./src/app/features/currency-converter/views/curreny-converter-search/currency-converter-search.component.ts");
 
 
 
@@ -17728,12 +17729,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+function CurrencyConverterComponent_ng_container_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-currency-converter-search");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+} }
 var CurrencyConverterComponent = /** @class */ (function () {
     function CurrencyConverterComponent(requestService, store, toastr, appService) {
         this.requestService = requestService;
         this.store = store;
         this.toastr = toastr;
         this.appService = appService;
+        this.isLoaded = false;
     }
     CurrencyConverterComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -17759,17 +17767,21 @@ var CurrencyConverterComponent = /** @class */ (function () {
                 });
             }
             _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_2__["ACTION_INIT_CURRENCIES"], payload: currencies });
+            _this.isLoaded = true;
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (error) {
             _this.toastr.error('Failed to fetch currencies.', 'Error!');
             throw Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(error);
         })).subscribe();
     };
     CurrencyConverterComponent.ɵfac = function CurrencyConverterComponent_Factory(t) { return new (t || CurrencyConverterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_request_service__WEBPACK_IMPORTED_MODULE_4__["RequestService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_app_service__WEBPACK_IMPORTED_MODULE_7__["AppService"])); };
-    CurrencyConverterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrencyConverterComponent, selectors: [["app-currency-converter"]], decls: 2, vars: 0, consts: [[1, "currency-converter-wrapper"]], template: function CurrencyConverterComponent_Template(rf, ctx) { if (rf & 1) {
+    CurrencyConverterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrencyConverterComponent, selectors: [["app-currency-converter"]], decls: 2, vars: 1, consts: [[1, "currency-converter-wrapper"], [4, "ngIf"]], template: function CurrencyConverterComponent_Template(rf, ctx) { if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-currency-converter-search");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CurrencyConverterComponent_ng_container_1_Template, 2, 0, "ng-container", 1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        } }, directives: [_views_curreny_converter_search_currency_converter_search_component__WEBPACK_IMPORTED_MODULE_8__["CurrencyConverterSearchComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2ZlYXR1cmVzL2N1cnJlbmN5LWNvbnZlcnRlci9jdXJyZW5jeS1jb252ZXJ0ZXIuY29tcG9uZW50LnNjc3MifQ== */"] });
+        } if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isLoaded);
+        } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _views_curreny_converter_search_currency_converter_search_component__WEBPACK_IMPORTED_MODULE_9__["CurrencyConverterSearchComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2ZlYXR1cmVzL2N1cnJlbmN5LWNvbnZlcnRlci9jdXJyZW5jeS1jb252ZXJ0ZXIuY29tcG9uZW50LnNjc3MifQ== */"] });
     return CurrencyConverterComponent;
 }());
 
@@ -17942,12 +17954,12 @@ function CurrencyConverterSearchComponent_div_0_ng_template_25_Template(rf, ctx)
 var _c0 = function (a0, a1) { return [a0, a1]; };
 function CurrencyConverterSearchComponent_div_0_ng_container_27_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](4, "currency");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](7, "currency");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](8, "currencyExchange");
@@ -17957,9 +17969,9 @@ function CurrencyConverterSearchComponent_div_0_ng_container_27_Template(rf, ctx
 } if (rf & 2) {
     var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](4, 2, ctx_r5.amountFormControl.value, ctx_r5.currencyConverterFormGroup.get("from").value == null ? null : ctx_r5.currencyConverterFormGroup.get("from").value.name), " =");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](4, 2, ctx_r5.currencyConverterFormGroup.get("amount").value, ctx_r5.currencyConverterFormGroup.get("from").value == null ? null : ctx_r5.currencyConverterFormGroup.get("from").value.name), " =");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](7, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](8, 8, ctx_r5.amountFormControl.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](11, _c0, ctx_r5.currencyConverterFormGroup.get("from").value == null ? null : ctx_r5.currencyConverterFormGroup.get("from").value.rate, ctx_r5.currencyConverterFormGroup.get("to").value == null ? null : ctx_r5.currencyConverterFormGroup.get("to").value.rate)), ctx_r5.currencyConverterFormGroup.get("to").value == null ? null : ctx_r5.currencyConverterFormGroup.get("to").value.name));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](7, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](8, 8, ctx_r5.currencyConverterFormGroup.get("amount").value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](11, _c0, ctx_r5.currencyConverterFormGroup.get("from").value == null ? null : ctx_r5.currencyConverterFormGroup.get("from").value.rate, ctx_r5.currencyConverterFormGroup.get("to").value == null ? null : ctx_r5.currencyConverterFormGroup.get("to").value.rate)), ctx_r5.currencyConverterFormGroup.get("to").value == null ? null : ctx_r5.currencyConverterFormGroup.get("to").value.name));
 } }
 function CurrencyConverterSearchComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -17998,7 +18010,7 @@ function CurrencyConverterSearchComponent_div_0_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "To");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "ng-select", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "ng-select", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, CurrencyConverterSearchComponent_div_0_ng_template_24_Template, 2, 4, "ng-template", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, CurrencyConverterSearchComponent_div_0_ng_template_25_Template, 2, 4, "ng-template", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -18006,22 +18018,20 @@ function CurrencyConverterSearchComponent_div_0_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, CurrencyConverterSearchComponent_div_0_ng_container_27_Template, 9, 14, "ng-container", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, CurrencyConverterSearchComponent_div_0_ng_container_27_Template, 9, 14, "ng-container", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r0.currencyConverterFormGroup);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControl", ctx_r0.amountFormControl);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControlName", "from")("clearable", false)("items", ctx_r0.currencies)("bindLabel", "name");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControlName", "to")("clearable", false)("items", ctx_r0.currencies)("bindLabel", "name");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("clearable", false)("items", ctx_r0.currencies)("bindLabel", "name");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("clearable", false)("items", ctx_r0.currencies)("bindLabel", "name");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.amountFormControl.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.currencyConverterFormGroup.get("amount").value);
 } }
 var CurrencyConverterSearchComponent = /** @class */ (function () {
     function CurrencyConverterSearchComponent(formBuilder, userService, toastr, store) {
@@ -18034,7 +18044,7 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
     }
     CurrencyConverterSearchComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.stateSubscription = this.userService.getAllStates().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (state) {
+        this.userService.getAllStates().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (state) {
             _this.currencies = state.currencies;
             _this.initialFromCurrency = state.fromCurrency;
             _this.initialToCurrency = state.toCurrency;
@@ -18048,11 +18058,12 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
         this.currencyConverterFormGroup.patchValue({
             from: this.currencyConverterFormGroup.get('to').value,
             to: this.currencyConverterFormGroup.get('from').value
-        });
+        }, { onlySelf: true, emitEvent: false });
+        this.addHistory();
     };
     CurrencyConverterSearchComponent.prototype.addHistory = function () {
         var _a, _b, _c, _d;
-        if (this.amountFormControl.value) {
+        if (this.currencyConverterFormGroup.get('amount').value) {
             var currencyConvertsHistory = JSON.parse(localStorage.getItem('currencyConvertsHistory'));
             if (!currencyConvertsHistory) {
                 currencyConvertsHistory = [];
@@ -18061,11 +18072,11 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
                 timestamp: Date.now(),
                 from: {
                     name: (_a = this.currencyConverterFormGroup.get('from').value) === null || _a === void 0 ? void 0 : _a.name,
-                    amount: this.amountFormControl.value
+                    amount: this.currencyConverterFormGroup.get('amount').value
                 },
                 to: {
                     name: (_b = this.currencyConverterFormGroup.get('to').value) === null || _b === void 0 ? void 0 : _b.name,
-                    amount: this.currencyExchangePipe.transform(this.amountFormControl.value, [
+                    amount: this.currencyExchangePipe.transform(this.currencyConverterFormGroup.get('amount').value, [
                         (_c = this.currencyConverterFormGroup.get('from').value) === null || _c === void 0 ? void 0 : _c.rate,
                         (_d = this.currencyConverterFormGroup.get('to').value) === null || _d === void 0 ? void 0 : _d.rate
                     ])
@@ -18077,9 +18088,13 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
     CurrencyConverterSearchComponent.prototype.initForm = function () {
         var _this = this;
         this.currencyConverterFormGroup = this.formBuilder.group({
+            amount: [null],
             from: [null],
             to: [null]
         });
+        this.currencyConverterFormGroup.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(1000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function () {
+            _this.addHistory();
+        })).subscribe();
         if (this.initialFromCurrency) {
             this.currencyConverterFormGroup.get('from').setValue(this.initialFromCurrency);
         }
@@ -18098,12 +18113,6 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
                 this.currencyConverterFormGroup.get('to').setValue(toFiltered[0]);
             }
         }
-        this.amountFormControl.valueChanges.subscribe(function (val) {
-            _this.addHistory();
-        });
-        this.currencyConverterFormGroup.valueChanges.subscribe(function (val) {
-            _this.addHistory();
-        });
         this.currencyConverterFormGroup.get('from').valueChanges.subscribe(function (val) {
             _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_6__["ACTION_SET_FROM_CURRENCY"], payload: val });
         });
@@ -18111,15 +18120,12 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
             _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_6__["ACTION_SET_TO_CURRENCY"], payload: val });
         });
     };
-    CurrencyConverterSearchComponent.prototype.ngOnDestroy = function () {
-        this.stateSubscription.unsubscribe();
-    };
     CurrencyConverterSearchComponent.ɵfac = function CurrencyConverterSearchComponent_Factory(t) { return new (t || CurrencyConverterSearchComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_reducer_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["Store"])); };
-    CurrencyConverterSearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrencyConverterSearchComponent, selectors: [["app-currency-converter-search"]], decls: 1, vars: 1, consts: [["class", "currency-converter-search-wrapper", 4, "ngIf"], [1, "currency-converter-search-wrapper"], [3, "formGroup"], [1, "row"], [1, "col-lg"], [1, "form-group"], ["for", "amount"], ["type", "number", "id", "amount", "placeholder", "Enter amount", "onKeyPress", "if(this.value.length===10) return false;", 1, "form-control", 3, "formControl"], [1, "form-group", "currency-dropdown"], [3, "formControlName", "clearable", "items", "bindLabel"], ["ng-label-tmp", ""], ["ng-option-tmp", ""], [1, "col-lg-1", "replace-currencies-button-wrapper"], ["type", "button", 1, "btn", "btn-primary", "replace-currencies-button", 3, "click"], [1, "bi", "bi-arrow-left-right"], [1, "convert-data-outer-wrapper"], [4, "ngIf"], [1, "convert-data-wrapper"], [1, "result"]], template: function CurrencyConverterSearchComponent_Template(rf, ctx) { if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CurrencyConverterSearchComponent_div_0_Template, 28, 11, "div", 0);
+    CurrencyConverterSearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrencyConverterSearchComponent, selectors: [["app-currency-converter-search"]], decls: 1, vars: 1, consts: [["class", "currency-converter-search-wrapper", 4, "ngIf"], [1, "currency-converter-search-wrapper"], [3, "formGroup"], [1, "row"], [1, "col-lg"], [1, "form-group"], ["for", "amount"], ["type", "number", "id", "amount", "placeholder", "Enter amount", "formControlName", "amount", "onKeyPress", "if(this.value.length===10) return false;", 1, "form-control"], [1, "form-group", "currency-dropdown"], ["formControlName", "from", 3, "clearable", "items", "bindLabel"], ["ng-label-tmp", ""], ["ng-option-tmp", ""], [1, "col-lg-1", "replace-currencies-button-wrapper"], ["type", "button", 1, "btn", "btn-primary", "replace-currencies-button", 3, "click"], [1, "bi", "bi-arrow-left-right"], ["formControlName", "to", 3, "clearable", "items", "bindLabel"], [1, "convert-data-outer-wrapper"], [4, "ngIf"], [1, "convert-data-wrapper"], [1, "result"]], template: function CurrencyConverterSearchComponent_Template(rf, ctx) { if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CurrencyConverterSearchComponent_div_0_Template, 28, 8, "div", 0);
         } if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.currencies && ctx.currencies.length);
-        } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NumberValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["NgSelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["ɵh"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["ɵf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["CurrencyPipe"], _shared_pipes_currency_exchange_pipe__WEBPACK_IMPORTED_MODULE_5__["CurrencyExchangePipe"]], styles: [".currency-converter-search-wrapper[_ngcontent-%COMP%]     .ng-value {\n  margin-left: 3px;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .currency-flag[_ngcontent-%COMP%] {\n  position: relative;\n  top: 2px;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .replace-currencies-button-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .replace-currencies-button-wrapper[_ngcontent-%COMP%]   .replace-currencies-button[_ngcontent-%COMP%] {\n  position: initial;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .convert-data-outer-wrapper[_ngcontent-%COMP%] {\n  height: 72px;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .convert-data-outer-wrapper[_ngcontent-%COMP%]   .convert-data-wrapper[_ngcontent-%COMP%]   .result[_ngcontent-%COMP%] {\n  font-size: 32px;\n}\n@media (min-width: 992px) {\n  .currency-converter-search-wrapper[_ngcontent-%COMP%]   .replace-currencies-button-wrapper[_ngcontent-%COMP%]   .replace-currencies-button[_ngcontent-%COMP%] {\n    position: relative;\n    top: 15px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXNzZXRzL3Njc3MvX3ZhcmlhYmxlcy5zY3NzIiwic3JjL2FwcC9mZWF0dXJlcy9jdXJyZW5jeS1jb252ZXJ0ZXIvdmlld3MvY3VycmVueS1jb252ZXJ0ZXItc2VhcmNoL2N1cnJlbmN5LWNvbnZlcnRlci1zZWFyY2guY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0Esb0JBQUE7QUNFRTtFQUVFLGdCQUFBO0FBRko7QUFLRTtFQUNFLGtCQUFBO0VBQ0EsUUFBQTtBQUhKO0FBTUU7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQUpKO0FBS0k7RUFDRSxpQkFBQTtBQUhOO0FBT0U7RUFDRSxZQUFBO0FBTEo7QUFPTTtFQUNFLGVBQUE7QUFMUjtBQWFBO0VBR007SUFDRSxrQkFBQTtJQUNBLFNBQUE7RUFaTjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvZmVhdHVyZXMvY3VycmVuY3ktY29udmVydGVyL3ZpZXdzL2N1cnJlbnktY29udmVydGVyLXNlYXJjaC9jdXJyZW5jeS1jb252ZXJ0ZXItc2VhcmNoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi8qKioqIFZBUklBQkxFUyAqKioqL1xyXG4kbGFyZ2VfbW9iaWxlX3ZpZXc6IDk5MnB4O1xyXG4iLCJAaW1wb3J0ICcuLi8uLi8uLi8uLi9hc3NldHMvc2Nzcy92YXJpYWJsZXMnO1xyXG5cclxuLmN1cnJlbmN5LWNvbnZlcnRlci1zZWFyY2gtd3JhcHBlciB7XHJcbiAgOjpuZy1kZWVwXHJcbiAgLm5nLXZhbHVlIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAzcHg7XHJcbiAgfVxyXG5cclxuICAuY3VycmVuY3ktZmxhZyB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB0b3A6IDJweDtcclxuICB9XHJcblxyXG4gIC5yZXBsYWNlLWN1cnJlbmNpZXMtYnV0dG9uLXdyYXBwZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIC5yZXBsYWNlLWN1cnJlbmNpZXMtYnV0dG9uIHtcclxuICAgICAgcG9zaXRpb246IGluaXRpYWw7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAuY29udmVydC1kYXRhLW91dGVyLXdyYXBwZXIge1xyXG4gICAgaGVpZ2h0OiA3MnB4O1xyXG4gICAgLmNvbnZlcnQtZGF0YS13cmFwcGVyIHtcclxuICAgICAgLnJlc3VsdCB7XHJcbiAgICAgICAgZm9udC1zaXplOiAzMnB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG5cclxufVxyXG5cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAkbGFyZ2VfbW9iaWxlX3ZpZXcpIHtcclxuICAuY3VycmVuY3ktY29udmVydGVyLXNlYXJjaC13cmFwcGVyIHtcclxuICAgIC5yZXBsYWNlLWN1cnJlbmNpZXMtYnV0dG9uLXdyYXBwZXIge1xyXG4gICAgICAucmVwbGFjZS1jdXJyZW5jaWVzLWJ1dHRvbiB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIHRvcDogMTVweDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG4iXX0= */"] });
+        } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NumberValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["NgSelectComponent"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["ɵh"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["ɵf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["CurrencyPipe"], _shared_pipes_currency_exchange_pipe__WEBPACK_IMPORTED_MODULE_5__["CurrencyExchangePipe"]], styles: [".currency-converter-search-wrapper[_ngcontent-%COMP%]     .ng-value {\n  margin-left: 3px;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .currency-flag[_ngcontent-%COMP%] {\n  position: relative;\n  top: 2px;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .replace-currencies-button-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .replace-currencies-button-wrapper[_ngcontent-%COMP%]   .replace-currencies-button[_ngcontent-%COMP%] {\n  position: initial;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .convert-data-outer-wrapper[_ngcontent-%COMP%] {\n  height: 72px;\n}\n.currency-converter-search-wrapper[_ngcontent-%COMP%]   .convert-data-outer-wrapper[_ngcontent-%COMP%]   .convert-data-wrapper[_ngcontent-%COMP%]   .result[_ngcontent-%COMP%] {\n  font-size: 32px;\n}\n@media (min-width: 992px) {\n  .currency-converter-search-wrapper[_ngcontent-%COMP%]   .replace-currencies-button-wrapper[_ngcontent-%COMP%]   .replace-currencies-button[_ngcontent-%COMP%] {\n    position: relative;\n    top: 15px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXNzZXRzL3Njc3MvX3ZhcmlhYmxlcy5zY3NzIiwic3JjL2FwcC9mZWF0dXJlcy9jdXJyZW5jeS1jb252ZXJ0ZXIvdmlld3MvY3VycmVueS1jb252ZXJ0ZXItc2VhcmNoL2N1cnJlbmN5LWNvbnZlcnRlci1zZWFyY2guY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0Esb0JBQUE7QUNFRTtFQUVFLGdCQUFBO0FBRko7QUFLRTtFQUNFLGtCQUFBO0VBQ0EsUUFBQTtBQUhKO0FBTUU7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQUpKO0FBS0k7RUFDRSxpQkFBQTtBQUhOO0FBT0U7RUFDRSxZQUFBO0FBTEo7QUFPTTtFQUNFLGVBQUE7QUFMUjtBQWFBO0VBR007SUFDRSxrQkFBQTtJQUNBLFNBQUE7RUFaTjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvZmVhdHVyZXMvY3VycmVuY3ktY29udmVydGVyL3ZpZXdzL2N1cnJlbnktY29udmVydGVyLXNlYXJjaC9jdXJyZW5jeS1jb252ZXJ0ZXItc2VhcmNoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi8qKioqIFZBUklBQkxFUyAqKioqL1xyXG4kbGFyZ2VfbW9iaWxlX3ZpZXc6IDk5MnB4O1xyXG4iLCJAaW1wb3J0ICcuLi8uLi8uLi8uLi9hc3NldHMvc2Nzcy92YXJpYWJsZXMnO1xyXG5cclxuLmN1cnJlbmN5LWNvbnZlcnRlci1zZWFyY2gtd3JhcHBlciB7XHJcbiAgOjpuZy1kZWVwXHJcbiAgLm5nLXZhbHVlIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAzcHg7XHJcbiAgfVxyXG5cclxuICAuY3VycmVuY3ktZmxhZyB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB0b3A6IDJweDtcclxuICB9XHJcblxyXG4gIC5yZXBsYWNlLWN1cnJlbmNpZXMtYnV0dG9uLXdyYXBwZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIC5yZXBsYWNlLWN1cnJlbmNpZXMtYnV0dG9uIHtcclxuICAgICAgcG9zaXRpb246IGluaXRpYWw7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAuY29udmVydC1kYXRhLW91dGVyLXdyYXBwZXIge1xyXG4gICAgaGVpZ2h0OiA3MnB4O1xyXG4gICAgLmNvbnZlcnQtZGF0YS13cmFwcGVyIHtcclxuICAgICAgLnJlc3VsdCB7XHJcbiAgICAgICAgZm9udC1zaXplOiAzMnB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG5cclxufVxyXG5cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAkbGFyZ2VfbW9iaWxlX3ZpZXcpIHtcclxuICAuY3VycmVuY3ktY29udmVydGVyLXNlYXJjaC13cmFwcGVyIHtcclxuICAgIC5yZXBsYWNlLWN1cnJlbmNpZXMtYnV0dG9uLXdyYXBwZXIge1xyXG4gICAgICAucmVwbGFjZS1jdXJyZW5jaWVzLWJ1dHRvbiB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIHRvcDogMTVweDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG4iXX0= */"] });
     return CurrencyConverterSearchComponent;
 }());
 
