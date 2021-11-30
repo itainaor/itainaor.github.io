@@ -18098,6 +18098,9 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
                 this.currencyConverterFormGroup.get('to').setValue(toFiltered[0]);
             }
         }
+        this.amountFormControl.valueChanges.subscribe(function (val) {
+            _this.addHistory();
+        });
         this.currencyConverterFormGroup.valueChanges.subscribe(function (val) {
             _this.addHistory();
         });
