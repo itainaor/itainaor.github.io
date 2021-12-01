@@ -18058,8 +18058,7 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
         this.currencyConverterFormGroup.patchValue({
             from: this.currencyConverterFormGroup.get('to').value,
             to: this.currencyConverterFormGroup.get('from').value
-        }, { onlySelf: true, emitEvent: false });
-        this.addHistory();
+        });
     };
     CurrencyConverterSearchComponent.prototype.addHistory = function () {
         var _a, _b, _c, _d;
@@ -18095,29 +18094,21 @@ var CurrencyConverterSearchComponent = /** @class */ (function () {
         this.currencyConverterFormGroup.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(1000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function () {
             _this.addHistory();
         })).subscribe();
-        if (this.initialFromCurrency) {
-            this.currencyConverterFormGroup.get('from').setValue(this.initialFromCurrency);
+        var fromFiltered = this.currencies.filter(function (currency) { return currency.name.toLowerCase() ===
+            (_this.initialFromCurrency ? _this.initialFromCurrency.toLowerCase() : _constants__WEBPACK_IMPORTED_MODULE_4__["CONSTANTS"].CURRENCY_CONVERTER.DEFAULT_FROM); });
+        if (fromFiltered.length) {
+            this.currencyConverterFormGroup.get('from').setValue(fromFiltered[0]);
         }
-        else {
-            var fromFiltered = this.currencies.filter(function (currency) { return currency.name.toLowerCase() === _constants__WEBPACK_IMPORTED_MODULE_4__["CONSTANTS"].CURRENCY_CONVERTER.DEFAULT_FROM; });
-            if (fromFiltered.length) {
-                this.currencyConverterFormGroup.get('from').setValue(fromFiltered[0]);
-            }
-        }
-        if (this.initialToCurrency) {
-            this.currencyConverterFormGroup.get('to').setValue(this.initialToCurrency);
-        }
-        else {
-            var toFiltered = this.currencies.filter(function (currency) { return currency.name.toLowerCase() === _constants__WEBPACK_IMPORTED_MODULE_4__["CONSTANTS"].CURRENCY_CONVERTER.DEFAULT_TO; });
-            if (toFiltered.length) {
-                this.currencyConverterFormGroup.get('to').setValue(toFiltered[0]);
-            }
+        var toFiltered = this.currencies.filter(function (currency) { return currency.name.toLowerCase() ===
+            (_this.initialToCurrency ? _this.initialToCurrency.toLowerCase() : _constants__WEBPACK_IMPORTED_MODULE_4__["CONSTANTS"].CURRENCY_CONVERTER.DEFAULT_TO); });
+        if (toFiltered.length) {
+            this.currencyConverterFormGroup.get('to').setValue(toFiltered[0]);
         }
         this.currencyConverterFormGroup.get('from').valueChanges.subscribe(function (val) {
-            _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_6__["ACTION_SET_FROM_CURRENCY"], payload: val });
+            _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_6__["ACTION_SET_FROM_CURRENCY"], payload: val.name });
         });
         this.currencyConverterFormGroup.get('to').valueChanges.subscribe(function (val) {
-            _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_6__["ACTION_SET_TO_CURRENCY"], payload: val });
+            _this.store.dispatch({ type: _core_reducer_app_actions__WEBPACK_IMPORTED_MODULE_6__["ACTION_SET_TO_CURRENCY"], payload: val.name });
         });
     };
     CurrencyConverterSearchComponent.ɵfac = function CurrencyConverterSearchComponent_Factory(t) { return new (t || CurrencyConverterSearchComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_reducer_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["Store"])); };
