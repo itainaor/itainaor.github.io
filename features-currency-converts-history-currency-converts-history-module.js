@@ -227,7 +227,7 @@ var CurrencyConvertsHistoryTableComponent = /** @class */ (function () {
         return [];
     };
     CurrencyConvertsHistoryTableComponent.ɵfac = function CurrencyConvertsHistoryTableComponent_Factory(t) { return new (t || CurrencyConvertsHistoryTableComponent)(); };
-    CurrencyConvertsHistoryTableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrencyConvertsHistoryTableComponent, selectors: [["app-currency-converts-history-table"]], decls: 16, vars: 2, consts: [[1, "currency-converts-history-table-wrapper", "table-responsive"], [1, "table", "table-hover"], [1, "table-primary"], ["scope", "col"], [4, "ngIf", "ngIfElse"], ["currencyConvertsTableTemplate", ""], ["colspan", "3"], [4, "ngFor", "ngForOf"]], template: function CurrencyConvertsHistoryTableComponent_Template(rf, ctx) { if (rf & 1) {
+    CurrencyConvertsHistoryTableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CurrencyConvertsHistoryTableComponent, selectors: [["app-currency-converts-history-table"]], decls: 16, vars: 2, consts: [[1, "currency-converts-history-table-wrapper", "table-responsive"], [1, "table", "table-hover"], [1, "table-primary"], ["scope", "col"], [4, "ngIf", "ngIfElse"], ["currencyConvertsTableTemplate", ""], ["colspan", "4"], [4, "ngFor", "ngForOf"]], template: function CurrencyConvertsHistoryTableComponent_Template(rf, ctx) { if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "table", 1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "thead");
